@@ -1,0 +1,652 @@
+/*COR DE ALGUMAS BARRAS De MENU*/
+
+.cor-barra-ferramenta{
+  background-color: indigo;
+}
+.cor-barra-moda{
+  background-color: #d63384;
+}
+.cor-barra-utilidades{
+  background-color: chocolate;
+}
+.cor-barra-ofertasdodia{
+  background-color: brown;
+}
+.cor-barra-brinquedos{
+  background-color: rgb(4, 86, 86);
+}
+.cor-barra-pets{
+  background-color: midnightblue;
+}
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/*MENU*/
+
+.dropdown-menu{/*retirando a borda do menu e colocamos uma sombra na caixa do mega-menu*/
+    border: none;
+    box-shadow: 0 3px 6px;
+}
+.dropdown-menu ul{/*tirando a marcacao (bolinhas da lista)*/
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-menu.show{/*colocando o mega menu para abrir para horizontal, já que o padrão é na vertical */
+    display: flex; 
+}
+
+.dropdown-menu li .dropdown-item{/*mudando a cor da letra na caixa do mega-menu*/
+    color: gray;
+    /*font-size: 1em;*/
+    /*padding: 0.5em 1em;*/
+}
+
+.dropdown-menu li .dropdown-item:hover{/*muda a cor de fundo dos elementos ao passar o mouse por cima*/
+  background-color: #516beb;
+}
+
+.dropdown-menu li:first-child a{/*colocando o primeiro elemento como um titulo*/
+    font-weight: bold;
+    text-transform:uppercase;
+    color: red; 
+    
+}
+
+.dropdown-menu li:first-child a:hover{/*mudando a cor de fundo quando passa o mouse por cima*/
+    background-color: coral; 
+}
+
+/*MEDIA QUERY*/
+
+@media only screen and (min-width:992px){
+    .dropdown-menu.show{
+        display: flex;
+        
+    }
+    
+}
+
+@media only screen and (max-width: 992px) {
+    .dropdown-menu.show {
+      flex-wrap: wrap;
+      max-height: 350px;
+      overflow-y: scroll;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1140px) {
+    .dropdown:hover .dropdown-menu {
+      width: 40vw;
+      flex-wrap: wrap;
+    }
+}
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*CAROUSEL*/
+
+#carouselExampleAutoplaying > div.carousel-indicators > button{/*modificando a cor e a forma dos botoes indicadores*/
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: aquamarine;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*SECAO1*/
+
+.row{
+    margin-top: 20px;
+}
+
+/*EFEITO BRILHANTE E DE ZOOM NOS CARDS*/
+
+/* Define o estilo base para os cards */
+.card-product {
+    position: relative;
+    transition: transform 0.3s ease;
+    border-radius: 8px; /* Para bordas arredondadas */
+    overflow: hidden; /* Para garantir que o zoom da imagem fique dentro dos limites do card */
+  }
+
+  /* Esconde os ícones inicialmente */
+.card-product .card-product-action {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Exibe os ícones ao passar o mouse sobre o card */
+.card-product:hover .card-product-action {
+  opacity: 1;
+}
+  
+  /* Brilho azul nas bordas e efeito de zoom ao passar o mouse */
+  .card-product:hover {
+    transform: scale(1.05); /* Aumenta levemente o card */
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6); /* Efeito de brilho azul nas bordas */
+  }
+  
+  /* Aplica o efeito de zoom na imagem dentro do card */
+  .card-product img {
+    transition: transform 0.3s ease;
+  }
+  
+  .card-product:hover img {
+    transform: scale(1.1); /* Aumenta a imagem para o efeito de zoom */
+  }
+  
+  /* Animação de pulsação para o brilho azul */
+  .card-product:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    border: 2px solid rgba(0, 123, 255, 0.6);
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6);
+    animation: border-shine 1.5s ease-in-out infinite;
+  }
+  
+  /* Definição da animação */
+  @keyframes border-shine {
+    0% {
+      box-shadow: 0 0 10px 2px rgba(0, 123, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.6);
+    }
+    100% {
+      box-shadow: 0 0 10px 2px rgba(0, 123, 255, 0.3);
+    }
+  }
+  
+
+
+a.btn-action{/*configurei os 3 botoes do card  */
+    /*border: 1px solid green;*/
+    /*padding: 5px;*/
+    width: 32px;
+    height: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px gray;
+    color: black;
+    text-align: center;
+}
+
+a.btn-action:hover{
+    background-color: rgb(69, 69, 230);
+    color: white;
+    
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*SECAO 2*/
+
+.row-destaque{
+    margin-top: 75px;
+    margin-bottom: 40px;
+    
+}
+
+.py-10 {
+    padding-top: 3rem; /* Aumente conforme necessário */
+    padding-bottom: 3rem;
+}
+
+.px-8 {
+    padding-left: 2rem; /* Ajuste para aumentar a largura */
+    padding-right: 2rem;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*SECAO 3*/
+
+.parte3 {
+  background-size: cover; /* Para cobrir a área de forma proporcional */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita a repetição da imagem */
+  padding: 2rem 1rem; /* Adiciona espaçamento */
+}
+
+@media (max-width: 720px) {
+  .parte3 {
+    background-size: contain; /* Ajusta a imagem para caber no container sem distorção */
+    padding: 1rem 0.5rem; /* Reduz o espaçamento em telas menores */
+  }
+  .parte3 p,
+  .parte3 button {
+    max-width: 80%;
+    font-size: 0.9rem; /* Reduz a fonte em telas menores */
+  }
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*SECAO 4*/
+
+/* Estilos CSS */
+.card-product2 {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card-product-action2 {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.estrelas{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.btn-action2 {/*Conf. dos icones svg*/
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cor-vermelha{/*Mudando a cor do svg favorito*/
+  fill: red;
+}
+
+.cor-amarela{
+  fill: rgb(196, 170, 27);
+}
+
+.btn-action2:hover {
+  /*background-color: #007bff;*/
+  color: rgb(241, 13, 13);
+}
+
+.btn-buy2 {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buy2:hover {
+  background-color: #218838;
+}
+
+/* Swiper ajustes */
+.swiper {
+  padding: 5px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+}
+
+.swiper-slide {
+  padding: 0; /* Remova qualquer padding interno */
+  margin: 0;  /* Remova qualquer margem extra */
+ /* max-width: 100%; /* Garante responsividade */
+ /* box-sizing: border-box; /* Inclui padding e borda no tamanho */
+}
+      
+      
+
+/*Conf da parte responsiva*/
+
+/* Garantir que os slides sejam responsivos */
+.swiper-slide {
+  max-width: 100%; /* O slide não deve ultrapassar o container */
+  box-sizing: border-box; /* Inclui padding e borda no tamanho */
+}
+
+/* Para telas muito pequenas, ajustar os espaçamentos */
+@media (max-width: 575px) {
+  .swiper {
+      padding: 10px;
+  }
+
+  .swiper-slide {
+      padding: 5px;
+  }
+}
+
+/*TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+
+
+/* Estilos para os cards no card-slider */
+/*.card-slider .card-product {
+  /*border: none;*/
+  /*border: 2 px solid transparent;/* Borda inicial transparente */
+  /*box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  padding: 8px;
+  overflow: hidden;/* Garante que a borda seja visível ao redor /
+  box-sizing: border-box; /* Inclui padding na largura total do card /
+
+}
+
+/* Borda colorida ao passar o mouse */
+/*.card-slider .card-product:hover {
+  border-color: #007bff; /* Cor da borda no hover / 
+  box-shadow: none; /* Remover sombras adicionais /
+  transform: none; /* Garantir que o zoom não seja aplicado /
+}
+
+.card-slider .card-product img {
+  /*border-radius: 8px 8px 0 0;/
+  border-radius: 6px;/* Arredonda a imagem um pouco para se ajustar /
+  width: 100%;transition: none;/*remove qualquer transição/
+  transform: none; /* Remover transformações de escala /
+}*/
+
+/*.card-slider .card-product-action {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Estilização dos botões de ação */
+/*.card-slider .btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  /*background-color: #f5e9eb;*/
+  /*color: rgb(7, 10, 1);*/
+  /*border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.card-slider .btn-action:hover {
+  background-color: #333;
+}
+
+/*TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+/*BORDAS DOS CARDS*/
+
+/* Corrigir as bordas para que apareçam no layout */
+/*.card-slider .card-product img {
+  border-radius: 8px 8px 0 0; /* Borda superior arredondada /
+}*/
+
+/*Ajuste do Layout do Contêiner dos Cards*/
+
+/*.swiper-slider{
+  padding: 15px; /* Espaço ao redor do card /
+  box-sizing: border-box;
+}
+
+.card-slider .card-body {
+  padding: 15px;
+}
+
+
+/*TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+
+/*svg visiveis*/
+
+/* Ícones SVG sempre visíveis */
+/*.card-slider .card-product-action {
+  opacity: 1;
+  transition: none; /* Remover o efeito de exibição no hover /
+}
+
+
+/*TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+
+/*botao comprar*/
+/* Estilo para o botão Comprar */
+/*.card-slider .btn-buy {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 8px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-slider .btn-buy:hover {
+  background-color: #218838; /* Cor ao passar o mouse /
+}*/
+
+
+
+
+
+
+
+/*SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+/*COR DO SVG FAVORITO*/
+/*.cor-svg{
+  fill: red;
+}*/
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*SECAO 5*/
+
+/*COR DO SVG*/
+.cor-svg2{
+  fill: #333;
+}
+
+/*TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT*/
+
+
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX*/
+/*SECAO TESTE*/
+/* Estilo para a seção card-slider */
+/*.card-sliderr .card-productt {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-sliderr .card-productt:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-sliderr .card-product-actionn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.card-sliderr .btn-actionn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.card-sliderr .btn-actionn:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.card-sliderr .btn-buyy {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-sliderr .btn-buyy:hover {
+  background-color: #218838;
+}*/
+/*NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN*/
+/*NOVO TESTE*/
+
+/* Ajuste para remover zoom */
+/*.card-product {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-product:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: none; /* Remover zoom /
+}*/
+
+/* Estilo para o Swiper /
+.swiper {
+  padding: 15px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+}*/
+/*HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH*/
+/*TESTANDO*/
+/* Ajuste para os cards do slider */
+/*.card-product {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-product:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-product-action {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-action:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-buy {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buy:hover {
+  background-color: #218838;
+}
+
+/* Swiper ajustes /
+.swiper {
+  padding: 15px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+}/*
+
+
+
+/*SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS*/
+footer{
+  margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
